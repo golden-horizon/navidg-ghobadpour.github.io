@@ -1,72 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Initial commitfor pages deployment -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navid Ghobadpour | Cybersecurity & Web Developer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navid Ghobadpour | Cybersecurity & Web Developer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>Navid Ghobadpour</h1>
-        <p>Cybersecurity • Cloud Security • Web Developer</p>
-    </header>
+  <!-- Header -->
+  <header>
+    <h1>Hi, I'm <span id="typed"></span></h1>
+    <p>Cybersecurity • Cloud Security • Web Developer</p>
+    <a class="btn" href="resume.pdf" download>Download Resume</a>
+  </header>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <p>
-            Cybersecurity and Cloud Security enthusiast with hands-on experience in SIEM,
-            threat detection, AWS cloud, networking, and secure web development.
-            Passionate about building secure and scalable systems.
-        </p>
-    </section>
+  <!-- GitHub Stats -->
+  <section class="github-stats">
+    <h2>GitHub Stats</h2>
+    <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight" alt="GitHub Stats">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=tokyonight" alt="Top Languages">
+  </section>
 
-    <section class="skills">
-        <h2>Technical Skills</h2>
-        <div class="grid">
-            <div class="card">Cybersecurity & SIEM (Splunk, Suricata)</div>
-            <div class="card">AWS Cloud (EC2, S3, IAM, VPC)</div>
-            <div class="card">Web Development (HTML, CSS, JS)</div>
-            <div class="card">Linux & Networking</div>
-        </div>
-    </section>
+  <!-- Projects Preview -->
+  <section class="projects">
+    <h2>Featured Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>SIEM Monitoring Lab</h3>
+        <p>Threat detection & log analysis using Splunk.</p>
+      </div>
+      <div class="card">
+        <h3>AWS Secure Cloud</h3>
+        <p>Secure VPC, IAM hardening, monitoring & logging.</p>
+      </div>
+      <div class="card">
+        <h3>Enterprise VPN Network</h3>
+        <p>Site-to-Site IPsec VPN with secure connectivity.</p>
+      </div>
+    </div>
+    <a class="btn" href="projects.html">View All Projects</a>
+  </section>
 
-    <section class="projects">
-        <h2>Projects</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>SIEM Monitoring Lab</h3>
-                <p>Threat detection and log analysis using Splunk.</p>
-            </div>
+  <!-- Contribution Snake -->
+  <section class="snake">
+    <h2>GitHub Contribution Snake</h2>
+    <img src="https://github.com/YOUR_USERNAME/github-contribution-grid-snake.svg" alt="Contribution Snake">
+  </section>
 
-            <div class="card">
-                <h3>AWS Secure Cloud</h3>
-                <p>Secure VPC, IAM hardening, monitoring and logging.</p>
-            </div>
+  <footer>
+    <p>© 2026 Navid Ghobadpour | Cybersecurity & Web Developer</p>
+  </footer>
 
-            <div class="card">
-                <h3>Enterprise VPN Network</h3>
-                <p>Site-to-Site IPsec VPN with secure connectivity.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>Email: navid77g@gmail.com</p>
-
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/navid-ghobadpour-90178180/">linkedin.com/in/navid-ghobadpour</a></p>
-    </section>
-
-    <footer>
-        <p>© 2026 Navid Ghobadpour | Cybersecurity Portfolio</p>
-    </footer>
+  <!-- Scripts -->
+  <script src="script.js"></script>
 
 </body>
-
-
 </html>
 
