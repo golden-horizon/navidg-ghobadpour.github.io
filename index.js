@@ -39,32 +39,48 @@ document.addEventListener("DOMContentLoaded", function () {
   /* =====================================
      3️⃣ CUSTOM MODAL
   ===================================== */
-  const modal = document.getElementById("modal");
-  const openBtn = document.getElementById("open-modal-btn");
-  const closeBtn = document.getElementById("close-modal-btn");
+const modal = document.getElementById("modal");
+const modalBody = document.getElementById("modal-body");
+const closeBtn = document.getElementById("close-modal-btn");
 
-  // Open modal
-  if (openBtn && modal) {
-    openBtn.addEventListener("click", function () {
-      modal.style.display = "block";
-    });
-  }
+const projectButtons = document.querySelectorAll(".open-modal");
 
-  // Close modal via close button
-  if (closeBtn && modal) {
-    closeBtn.addEventListener("click", function () {
-      modal.style.display = "none";
-    });
-  }
+projectButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const project = button.getAttribute("data-project");
 
-  // Close modal when clicking outside modal-content
-  window.addEventListener("click", function (event) {
-    if (event.target === modal) {
-      modal.style.display = "none";
+    if (project === "siem") {
+      modalBody.innerHTML = `
+        <h2>Enterprise SIEM Implementation</h2>
+        <ul>
+          <li>Splunk log ingestion</li>
+          <li>AWS EC2 + IAM hardening</li>
+          <li>Threat detection rules</li>
+        </ul>
+      `;
     }
-  });
 
+    if (project === "vpn") {
+      modalBody.innerHTML = `
+        <h2>Site-to-Site IPsec VPN</h2>
+        <ul>
+          <li>IPsec configuration</li>
+          <li>Secure tunnel between sites</li>
+          <li>Firewall rule hardening</li>
+        </ul>
+      `;
+    }
+
+    modal.style.display = "block";
+  });
 });
 
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
 
-
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
