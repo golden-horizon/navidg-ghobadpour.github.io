@@ -109,5 +109,34 @@ footer{
   display: block;
   margin: 10px auto;
 }
+body {
+  overflow-x: hidden;
+}
+
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+.rect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  height: 80px;
+  padding: 0 40px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #2563eb, #0ea5e9);
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 
 
