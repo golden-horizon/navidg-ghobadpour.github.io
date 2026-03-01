@@ -52,6 +52,23 @@ document.querySelectorAll(".open-modal").forEach(button => {
   });
 });
 
+// Basic browser info
+document.getElementById("protocol").textContent = window.location.protocol;
+document.getElementById("browser").textContent = navigator.userAgent;
+document.getElementById("platform").textContent = navigator.platform;
+document.getElementById("screen").textContent =
+  window.innerWidth + " x " + window.innerHeight;
+
+// Get public IP from API
+fetch("https://api.ipify.org?format=json")
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("ip").textContent = data.ip;
+  })
+  .catch(() => {
+    document.getElementById("ip").textContent = "Unavailable";
+  });
+
 // Close Modal
 closeBtn.addEventListener("click", () => modal.close());
 
