@@ -72,3 +72,31 @@ fetch("https://api.ipify.org?format=json")
 // Close Modal
 closeBtn.addEventListener("click", () => modal.close());
 
+// internet speed!
+.speed-container{
+  text-align:center;
+  margin-top:10px;
+}
+
+.speed-circle{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  border:6px solid #00bcd4;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:bold;
+  margin:auto;
+}
+
+#speedValue{
+  font-size:16px;
+}
+
+.speed-circle:hover{
+  transform:scale(1.1);
+  transition:0.3s;
+}
+
