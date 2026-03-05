@@ -81,12 +81,16 @@ dialog::backdrop{background:rgba(0,0,0,0.7);}
 
 .hover-link {
   text-decoration: none;
+  color: #4da6ff;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .hover-link:hover {
   text-decoration: underline;
   color: red;
 }
+
 
 
 
