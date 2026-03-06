@@ -2,6 +2,7 @@
 const bodyEl = document.querySelector("body");
 const btn = document.getElementById("btn");
 let isBgGrey = true;
+
 btn.addEventListener("click", () => {
   bodyEl.style.backgroundColor = isBgGrey ? "blue" : "#0d1117";
   isBgGrey = !isBgGrey;
@@ -27,24 +28,37 @@ document.querySelectorAll(".open-modal").forEach(button => {
   button.addEventListener("click", () => {
     const project = button.dataset.project;
     if (project === "siem") {
-      modalBody.innerHTML = `<h2>Enterprise SIEM Implementation</h2><ul><li>Splunk log ingestion</li><li>AWS EC2 + IAM hardening</li><li>Threat detection rules</li></ul>`;
+      modalBody.innerHTML = `
+        <h2>Enterprise SIEM Implementation</h2>
+        <ul>
+          <li>Splunk log ingestion</li>
+          <li>AWS EC2 + IAM hardening</li>
+          <li>Threat detection rules</li>
+        </ul>
+      `;
     } else if (project === "vpn") {
-      modalBody.innerHTML = `<h2>Site-to-Site IPsec VPN</h2><ul><li>IPsec configuration</li><li>Secure tunnel between sites</li><li>Firewall rule hardening</li></ul>`;
+      modalBody.innerHTML = `
+        <h2>Site-to-Site IPsec VPN</h2>
+        <ul>
+          <li>IPsec configuration</li>
+          <li>Secure tunnel between sites</li>
+          <li>Firewall rule hardening</li>
+        </ul>
+      `;
     }
     modal.showModal();
   });
 });
+
 closeBtn.addEventListener("click", () => modal.close());
 
-// Visitor Info
-document.getElementById("protocol").textContent = window.location.protocol;
+// Visitor info
 document.getElementById("browser").textContent = navigator.userAgent;
 document.getElementById("platform").textContent = navigator.platform;
 document.getElementById("screen").textContent = `${window.innerWidth} x ${window.innerHeight}`;
 
-// Get public IP and location using API
 fetch("https://ipapi.co/json/")
-  .then(response => response.json())
+  .then(res => res.json())
   .then(data => {
     document.getElementById("ip").textContent = data.ip;
     document.getElementById("city").textContent = data.city;
@@ -56,28 +70,43 @@ fetch("https://ipapi.co/json/")
     document.getElementById("country").textContent = "N/A";
   });
 
-// Internet Speed Gauge
-const speedCanvas = document.getElementById("speedGauge");
-const ctx = speedCanvas.getContext("2d");
-function drawGauge(speed){
-  ctx.clearRect(0,0,60,60);
+// Speedometer
+const canvas = document.getElementById("speedGauge");
+const ctx = canvas.getContext("2d");
+
+function drawGauge(speedPercent){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // semicircle background
   ctx.beginPath();
-  ctx.arc(30,30,25,0,2*Math.PI);
+  ctx.arc(50, 50, 40, Math.PI, 0, false);
+  ctx.lineWidth = 6;
   ctx.strokeStyle = "#555";
-  ctx.lineWidth = 4;
   ctx.stroke();
 
+  // needle
+  const angle = Math.PI - (speedPercent/100) * Math.PI;
+  const x = 50 + 35 * Math.cos(angle);
+  const y = 50 + 35 * Math.sin(angle);
   ctx.beginPath();
-  ctx.arc(30,30,25,-Math.PI/2,(-Math.PI/2 + (speed/100)*2*Math.PI));
+  ctx.moveTo(50, 50);
+  ctx.lineTo(x, y);
   ctx.strokeStyle = "#00bcd4";
   ctx.lineWidth = 4;
   ctx.stroke();
+
+  // center circle
+  ctx.beginPath();
+  ctx.arc(50, 50, 4, 0, 2*Math.PI);
+  ctx.fillStyle = "#00bcd4";
+  ctx.fill();
 }
 
-function updateSpeedGauge(){
-  let speed = navigator.connection ? navigator.connection.downlink*10 : 5; // scale for demo
-  if(speed > 100) speed = 100;
-  drawGauge(speed);
-  document.getElementById("speedValue").textContent = navigator.connection ? navigator.connection.downlink + "M" : "N/A";
+function updateSpeed() {
+  let speed = navigator.connection ? navigator.connection.downlink : Math.random() * 10 + 1;
+  let speedPercent = Math.min(speed*10, 100);
+  drawGauge(speedPercent);
+  document.getElementById("speedValue").textContent = speed.toFixed(1) + "M";
 }
-updateSpeedGauge();
+
+setInterval(updateSpeed, 1000);
+updateSpeed();
