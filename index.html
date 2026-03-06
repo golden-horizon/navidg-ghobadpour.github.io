@@ -1,120 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navid Ghobadpour | Cybersecurity & Web Developer</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navid Ghobadpour | Cybersecurity & Web Developer</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Background Toggle Button -->
-  <button id="btn" class="btn-outline">Toggle Background</button>
+<!-- Background Toggle -->
+<button id="btn" class="btn-outline">Toggle Background</button>
 
-  <!-- Visitor Information -->
-  <div class="visitor-box">
-    <div class="speed-indicator">
-      <canvas id="speedGauge" width="60" height="60"></canvas>
-      <div id="speedValue">0M</div>
-    </div>
-    <div class="visitor-details">
-      <h3>Visitor Information</h3>
-      <p><strong>IP:</strong> <span id="ip">Loading...</span></p>
-      <p><strong>City:</strong> <span id="city">Loading...</span></p>
-      <p><strong>Country:</strong> <span id="country">Loading...</span></p>
-      <p><strong>Browser:</strong> <span id="browser"></span></p>
-      <p><strong>Platform:</strong> <span id="platform"></span></p>
-      <p><strong>Screen:</strong> <span id="screen"></span></p>
-    </div>
+<!-- Visitor Information -->
+<div class="visitor-box">
+  <div class="speed-indicator">
+    <canvas id="speedGauge" width="100" height="50"></canvas>
+    <div id="speedValue">0M</div>
+  </div>
+  <div class="visitor-details">
+    <h3>Visitor Information</h3>
+    <p><strong>IP:</strong> <span id="ip">Loading...</span></p>
+    <p><strong>City:</strong> <span id="city">Loading...</span></p>
+    <p><strong>Country:</strong> <span id="country">Loading...</span></p>
+    <p><strong>Browser:</strong> <span id="browser"></span></p>
+    <p><strong>Platform:</strong> <span id="platform"></span></p>
+    <p><strong>Screen:</strong> <span id="screen"></span></p>
+  </div>
+</div>
+
+<!-- Moving Banner -->
+<div class="banner-wrapper">
+  <div id="rect" class="rect">
+    Building Secure Infrastructure for a Safer Digital World
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <h2>Welcome to my Website</h2>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Header -->
+<header>
+  <img src="https://github.com/golden-horizon/navidg-ghobadpour.github.io/blob/main/IMG_0589.jpg?raw=true" class="profile" alt="Navid Ghobadpour">
+  <h1>I’m Navid Ghobadpour</h1>
+  <p>Cybersecurity • Cloud Security • Web Developer</p>
+</header>
+
+<!-- About -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>I began my technical journey with Cisco networking, building a strong foundation in routing, switching, subnetting, VLANs, and network security fundamentals. From there, I transitioned into cybersecurity, focusing on governance, risk, and compliance frameworks including ISO/IEC 27001 and the Essential Eight maturity model.</p>
+  <p>I have practical experience conducting security assessments, identifying vulnerabilities, preparing audit documentation, and reporting security gaps with remediation strategies aligned to organizational standards. My background includes hands-on work with SIEM monitoring, log analysis, firewall configuration, VPN deployment, and secure infrastructure design.</p>
+  <p>Beyond security operations, I expanded into Linux system administration, secure server configuration, and full-stack web development using HTML, CSS, JavaScript, Python, and modern frontend/backend libraries. I focus on writing clean, secure, and scalable code while understanding the infrastructure that supports it.</p>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="grid">
+    <div class="card">SIEM / Splunk / Threat Detection</div>
+    <div class="card">AWS Security (EC2, IAM, VPC, CloudWatch)</div>
+    <div class="card">Web Dev (HTML, CSS, JS)</div>
+    <div class="card">Linux & Networking</div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <h2>Security Projects</h2>
+
+  <div class="card">
+    <h3>Enterprise SIEM Implementation</h3>
+    <p>Designed and implemented enterprise SIEM architecture.</p>
+    <button class="btn-outline open-modal" data-project="siem">View Security Project</button>
   </div>
 
-  <!-- Moving Banner -->
-  <div class="banner-wrapper">
-    <div id="rect" class="rect">
-      Building Secure Infrastructure for a Safer Digital World
-    </div>
+  <div class="card">
+    <h3>Site-to-Site IPsec VPN</h3>
+    <p>Secure communication between Sydney & Melbourne offices.</p>
+    <button class="btn-outline open-modal" data-project="vpn">View Security Project</button>
   </div>
+</section>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <h2>Welcome to my Website</h2>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:navid77g@gmail.com" class="hover-link">navid77g@gmail.com</a></p>
+  <p>
+    <a href="https://github.com/golden-horizon" target="_blank" class="hover-link"><i class="fab fa-github"></i> GitHub</a> |
+    <a href="https://www.linkedin.com/in/navid-ghobadpour-90178180/" target="_blank" class="hover-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+  </p>
+</section>
 
-  <!-- Header -->
-  <header>
-    <img src="https://github.com/golden-horizon/navidg-ghobadpour.github.io/blob/main/IMG_0589.jpg?raw=true" class="profile">
-    <h1>I’m Navid Ghobadpour</h1>
-    <p>Cybersecurity • Cloud Security • Web Developer</p>
-  </header>
+<!-- Footer -->
+<footer>
+  <p>© 2026 Navid Ghobadpour</p>
+</footer>
 
-  <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I began my technical journey with Cisco networking, developing strong foundations in routing, switching, VLANs, subnetting and network security. I then expanded into cybersecurity focusing on governance, risk and compliance frameworks such as ISO 27001 and the Essential Eight maturity model.
+<!-- Modal -->
+<dialog id="modal">
+  <div id="modal-body"></div>
+  <button id="close-modal-btn" class="btn">Close</button>
+</dialog>
 
-My experience includes security assessments, vulnerability analysis, SIEM monitoring, firewall configuration, VPN deployment and secure infrastructure design.
-
-I also work with Linux systems and full-stack development using HTML, CSS, JavaScript and Python. I enjoy building secure and scalable applications while understanding the infrastructure behind them.
-
-I am always interested in contributing to projects related to cybersecurity, cloud security and secure application development.
-
-Technical Skills</p>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="grid">
-      <div class="card">SIEM / Splunk / Threat Detection</div>
-      <div class="card">AWS Security (EC2, IAM, VPC, CloudWatch)</div>
-      <div class="card">Web Dev (HTML, CSS, JS)</div>
-      <div class="card">Linux & Networking</div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Security Projects</h2>
-    <div class="card">
-      <h3>Enterprise SIEM Implementation</h3>
-      <p>Designed and implemented enterprise SIEM architecture.</p>
-      <button class="btn-outline open-modal" data-project="siem">View Security Project</button>
-    </div>
-    <div class="card">
-      <h3>Site-to-Site IPsec VPN</h3>
-      <p>Secure communication between Sydney & Melbourne offices.</p>
-      <button class="btn-outline open-modal" data-project="vpn">View Security Project</button>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: navid77g@gmail.com</p>
-    <div class="contact-links">
-      <a href="https://github.com/golden-horizon" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/navid-ghobadpour-90178180/" target="_blank">LinkedIn</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Navid Ghobadpour</p>
-  </footer>
-
-  <!-- Modal -->
-  <dialog id="modal">
-    <div id="modal-body"></div>
-    <button id="close-modal-btn" class="btn">Close</button>
-  </dialog>
-
-  <script src="index.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
-
