@@ -24,7 +24,7 @@ section{max-width:1100px;margin:60px auto;padding:0 20px;}
 
 .visitor-box {
   width: 20%;           
-  max-width: 450px;     /* optional: limit maximum width */
+  max-width: 200px;     /* optional: limit maximum width */
   margin: 20px auto;
   padding: 15px 25px;
   background: #1e293b;
@@ -44,5 +44,6 @@ section{max-width:1100px;margin:60px auto;padding:0 20px;}
 
 .hover-link{text-decoration:none;color:#4da6ff;font-weight:bold;cursor:pointer;}
 .hover-link:hover{text-decoration:underline;color:red;}
+
 
 
